@@ -1,0 +1,101 @@
+<div class="container-fluid" ng-controller="BooksController">
+
+
+
+
+
+  <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Home</a>
+    </div>
+
+    <div class="pull-right">
+      <button type="button" class="btn btn-default" ng-click="newBook()"> Create New Book </button>
+    </div>
+
+  </nav>
+
+
+
+
+
+  <div class="row">
+
+
+
+    <div class="col-xs-{{page.listWidth}} col-sm-{{page.listWidth}} col-md-{{page.listWidth}} col-lg-{{page.listWidth}}" >
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Books list</h3>
+        </div>
+        <div class="panel-body">
+          <ul class="list-group" >
+            <li class="list-group-item"  ng-repeat="book in booksList " >
+
+              {{book.name}}
+
+
+
+              <span class="pull-right">
+              <span class="small">Author : {{book.author}} </span>  &nbsp &nbsp &nbsp
+                <span class="glyphicon glyphicon-remove"  ng-click="delete(book)" ></span>
+                <span class="glyphicon glyphicon-edit"  ng-click="edit(book)" ></span>
+
+              </span>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"  ng-show="formShow" >
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Book From</h3>
+        </div>
+        <div class="panel-body">
+          <form action="" method="post" role="form">
+
+            <input type="hidden" class="form-control" name=""  ng-model="form.id" value="{{form.id}}" >
+
+          	<div class="form-group">
+          		<label for="">Name</label>
+
+              <input type="text" class="form-control" name="" ng-model="form.name" value="{{form.name}}" >
+              <input type="hidden" class="form-control" name=""  ng-model="form.id" value="{{form.id}}" >
+          	</div>
+
+            <div class="form-group">
+              <label for="">Author</label>
+
+              <input type="text" class="form-control" name="" ng-model="form.author" value="{{form.author}}" >
+
+            </div>
+
+
+          </form>
+        </div>
+        <div class="panel-footer">
+
+
+          <button class="btn btn-default" ng-click="save(form)" > Save</button>
+          <button class="btn btn-default" ng-click="toggleForm(false)" > Close</button>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+

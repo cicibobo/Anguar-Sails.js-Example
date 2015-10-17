@@ -1,0 +1,13 @@
+
+For Run
+1) npm install sails.js  npm -g install sails
+http://sailsjs.org
+2) type in terminal "sails lift"
+3) setup DB in app/config/connections.js someMysqlServer
+
+For Test
+1) install mocha
+2) install supertest
+3) type in terminal "mocha"
+
+
